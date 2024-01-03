@@ -5,7 +5,11 @@ import 'virtual:uno.css'
 import Store from '@/store/index.ts'
 import Router from '@/router'
 
-createApp(App)
-  .use(Store)
+const app = createApp(App)
+app.use(Store)
   .use(Router)
   .mount('#app')
+
+window.unmount = () => {
+  app.unmount()
+}
